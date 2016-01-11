@@ -1,0 +1,38 @@
+{
+  "name": "js-bplate",
+  "version": "0.0.0",
+  "description": "Personal Javascript Boilerplate",
+  "main": "index.js",
+  "dependencies": {},
+  "devDependencies": {
+    "chai": "^3.3.0",
+    "mocha": "^2.3.3",
+    "browserify": "^12.0.1",
+    "uglify-js": "^2.6.1",
+    "watchify": "^3.6.1"
+  },
+  "scripts": {
+    "watch": "watchify index.js -d --s Boilerplate -o dist/boilerplate.js -v",
+    "watch-scss": "sass --watch sass:dist",
+    "build-debug": "browserify index.js -d --s Boilerplate > dist/boilerplate.js",
+    "build-min": "browserify index.js --s Boilerplate | uglifyjs -c > dist/boilerplate.min.js",
+    "build-js": "npm run build-debug && npm run build-min",
+    "build-css": "sass sass/boilerplate.scss dist/boilerplate.css",
+    "build-files": "npm run build-js && npm run build-css",
+    "test": "make test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Blancframe/boilerplate.git"
+  },
+  "keywords": [
+    "Javascript",
+    "boilerplate"
+  ],
+  "author": "Jhon Majoor <jhonmajoor@gmail.com> (http://blancframe.com)",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/JhonM/js-bplate/issues"
+  },
+  "homepage": "https://github.com/JhonM/js-bplate#readme"
+}
